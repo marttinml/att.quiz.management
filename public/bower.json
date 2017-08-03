@@ -1,0 +1,15 @@
+{
+    "name": "crear-encuestas",
+    "version": "0.0.8",
+    "dependencies": {
+        "moment": "latest",
+        "angular": "latest",
+        "angular-route": "latest",
+        "angular-resource": "latest",
+        "angular-touch": "latest",
+        "angular-animate": "latest",
+        "angular-datepicker": "latest",
+        "snap.svg":"latest",
+        "jspdf": "latest"
+    }
+}

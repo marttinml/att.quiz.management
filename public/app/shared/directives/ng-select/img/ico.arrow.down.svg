@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TF_Combo" transform="translate(-323.000000, -20.000000)" fill="#1BA0D9">
+            <g transform="translate(3.000000, 17.000000)" id="TF_empty">
+                <g>
+                    <path d="M330.604266,1.38288196 C331.113504,1.89484362 331.112959,2.72106259 330.602632,3.23030105 L325.931254,7.89459853 L330.616248,12.5676103 C331.126576,13.077938 331.128209,13.9047016 330.618971,14.4150293 C330.108643,14.9248124 329.282424,14.9264464 328.771007,14.4172079 L323.53157,9.19084188 C323.193348,8.85479896 323.000001,8.38314067 323.000001,7.89677709 C322.999457,7.40986888 323.192259,6.93875523 323.529391,6.60162303 L328.756847,1.38179268 C329.011738,1.12635649 329.345603,1 329.680011,1 C330.014965,1 330.348829,1.12799041 330.604266,1.38288196 Z" id="Page-1" transform="translate(326.999974, 7.899127) scale(1, -1) rotate(90.000000) translate(-326.999974, -7.899127) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

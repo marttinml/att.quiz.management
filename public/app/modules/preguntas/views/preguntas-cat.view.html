@@ -1,0 +1,45 @@
+<header class="header-preguntas">
+    <div class="back" ng-click="atras()" ng-class="{'disabled': backDisabled}"></div>
+    <div class="next" ng-click="siguiente()" ng-class="{'disabled': nextDisabled}"></div>
+    <div class="close" ng-click="cerrar()"></div>
+    <div class="position">{{preguntaActual + 1}} / {{numeroPreguntas}}</div>
+</header>
+<main style="padding-top: 20px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group">
+                        <div class="container-pregunta">
+                            <label>Pregunta {{preguntaActual + 1}}</label>
+                            <textarea type="text" class="form-control box" placeholder="" ng-model="preguntas[preguntaActual].pregunta" style="height: 90px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="categorias-colors form-group">
+                        <div ng-placeholder class="textbox no-border" ng-model="preguntas[preguntaActual].respuestas[$index].respuesta" ng-repeat="categoria in categorias">
+                            <label>{{categoria.categoria}}</label>
+                            <input style="height:50px;" type="text" class="form-control" ng-model="preguntas[preguntaActual].respuestas[$index].respuesta">
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-preguntas nuevo-control-preguntas">
+                            <div class="eliminar" ng-click="removerPregunta()" ng-class="{'disabled': eliminarDisabled}"> - </div>
+                            <div class="texto">PREGUNTA</div>
+                            <div class="agregar" ng-click="agregarPregunta()"> + </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group footer-buttons" style="height: 60px;">
+                        <p>
+                            <button type="button" class="btn button-blue" ng-click="generar()" style="width: 90%; margin: 0 5%;">GENERAR</button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+<ng-alert-error visible="muestraAlerta" titulo="Eliminar pregunta" cuerpo="¿Deseas eliminar esta pregunta?" aceptar="aceptaAlerta" cancelar="cancelaAlerta"></ng-alert-error>
+<ng-alert-error visible="muestraAlertaFinal" titulo="Descartar las preguntas" cuerpo="¿Deseas descartar todas las preguntas?" aceptar="aceptaAlertaFinal" cancelar="cancelaAlertaFinal"></ng-alert-error>

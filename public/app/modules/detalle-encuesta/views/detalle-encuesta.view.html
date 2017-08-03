@@ -1,0 +1,29 @@
+<ng-header titulo="{{encuesta.titulo}}" back="true"></ng-header>
+<div class="detalle-opciones" ng-click="toggleId()"></div>
+<div class="detalle-info">
+    <div class="participantes">Participantes totales</div>
+    <div class="veces">{{veces}}</div>
+</div>
+<main class="detalle-resumen">
+
+    <div class="container-fluid">
+        
+        <div class="col-md-12">
+            <div class="respuestas">Resultado por pregunta</div>
+        </div>
+        <div class="custom-martin col-sm-12 col-md-6 col-lg-3" ng-repeat="pregunta in preguntas" style="padding:50px;">
+            <div style="font-size: 16px;">{{pregunta.pregunta}}</div>
+            <div class="grafica" ng-repeat="respuesta in pregunta.respuestas">
+                <div style="text-align: left;">{{respuesta.respuesta || respuesta.name}}</div>
+                <div ng-bar percent="respuesta.porcentaje" color="respuesta.color"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="sidebar-detalle" ng-show="muestraId" ng-click="toggleId()">
+    <div class="close"></div>
+    <div class="info-encuesta" ng-class="{'open': muestraId}">
+        <div class="numero-encuesta">Número de encuesta</div>
+        <div class="id-encuesta">#{{encuesta.id}}</div>
+    </div>
+</div>

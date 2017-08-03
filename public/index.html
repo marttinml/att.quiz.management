@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crea tu encuesta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="app/shared/directives/ng-spin/ng-spin.style.css">
+    <link rel="stylesheet" href="app/shared/directives/ng-alert/ng-alert.style.css">
+    <link rel="stylesheet" href="app/shared/directives/ng-header/ng-header.style.css">
+    <link rel="stylesheet" href="app/shared/directives/ng-select/ng-select.style.css">
+    <link rel="stylesheet" href="app/shared/directives/ng-placeholder/ng-placeholder.style.css">
+    <link rel="stylesheet" href="app/shared/directives/ng-radio-group/ng-radio-group.style.css">
+    <link rel="stylesheet" href="app/shared/directives/ng-datepicker/ng-datepicker.style.css">
+
+    <link rel="stylesheet" href="bower_components/angular-datepicker/dist/angular-datepicker.css">
+
+</head>
+
+<body ng-controller="AppController">
+    <div ng-view></div>
+    <ng-alert ng-show="alert" mensaje="mensajeAlerta" accion="closeAlert"></ng-alert>
+    <ng-spin ng-show="spin"></ng-spin>
+    
+    <!-- BOWER COMPONENTS -->
+    <script src="bower_components/snap.svg/dist/snap.svg-min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-datepicker/dist/angular-datepicker.js"></script>
+    <script src="bower_components/snap.svg/dist/snap.svg-min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    
+    <!-- CONFIG -->
+    <!-- app -->
+    <script src="app/config/app.module.js"></script>
+    <script src="app/config/app.controller.js"></script>
+    <script src="app/config/app.router.js"></script>
+    <script src="app/config/app.singleton.js"></script>
+  
+    <!-- SHARED -->
+    <!-- directives -->
+    <script src="app/shared/directives/ng-input/ng-input.directive.js"></script>
+    <script src="app/shared/directives/ng-spin/ng-spin.directive.js"></script>
+    <script src="app/shared/directives/ng-alert/ng-alert.directive.js"></script>
+    <script src="app/shared/directives/ng-header/ng-header.directive.js"></script>
+    <script src="app/shared/directives/ng-select/ng-select.directive.js"></script>
+    <script src="app/shared/directives/ng-bar/ng-bar.directive.js"></script>
+    <script src="app/shared/directives/ng-placeholder/ng-placeholder.directive.js"></script>
+    <script src="app/shared/directives/ng-radio-group/ng-radio-group.directive.js"></script>
+    <script src="app/shared/directives/ng-datepicker/ng-datepicker.directive.js"></script>
+    <!-- api encuestas -->
+    <script src="app/shared/api/encuestas/encuestas.service.js"></script>
+    <script src="app/shared/api/encuestas/direcciones.service.js"></script>
+    <script src="app/shared/api/encuestas/tipos.service.js"></script>
+    <script src="app/shared/api/encuestas/satisfaccion.service.js"></script>
+    <script src="app/shared/api/encuestas/indicadores.service.js"></script>
+    <script src="app/shared/api/encuestas/tipo-encuesta.service.js"></script>
+    <!-- internal -->
+    <script src="app/shared/internal/encuesta/encuesta.service.js"></script>
+   
+    <!-- MODULES -->
+    <!-- inicio -->
+    <script src="app/modules/inicio/inicio.module.js"></script>
+    <script src="app/modules/inicio/controllers/inicio.controller.js"></script>
+    <!-- crear -->
+    <script src="app/modules/crear/crear.module.js"></script>
+    <script src="app/modules/crear/controllers/crear.controller.js"></script>
+    <!-- categorias -->
+    <script src="app/modules/categorias/categorias.module.js"></script>
+    <script src="app/modules/categorias/controllers/categorias.controller.js"></script>
+    <!-- preguntas -->
+    <script src="app/modules/preguntas/preguntas.module.js"></script>
+    <script src="app/modules/preguntas/services/preguntas.service.js"></script>
+    <script src="app/modules/preguntas/controllers/preguntas.controller.js"></script>
+    <script src="app/modules/preguntas/controllers/preguntas-cat.controller.js"></script>
+    <!-- generar -->
+    <script src="app/modules/generar/generar.module.js"></script>
+    <script src="app/modules/generar/controllers/generar.controller.js"></script>
+    <!-- detalle -->
+    <script src="app/modules/detalle/detalle.module.js"></script>
+    <script src="app/modules/detalle/controllers/detalle.controller.js"></script>
+
+    <script src="app/modules/detalle-encuesta/detalle-encuesta.module.js"></script>
+    <script src="app/modules/detalle-encuesta/controllers/detalle-encuesta.controller.js"></script>
+    <!-- resumen -->
+    <script src="app/modules/resumen/resumen.module.js"></script>
+    <script src="app/modules/resumen/controllers/resumen.controller.js"></script>
+    <!-- calendario -->
+    <script src="app/modules/calendario/calendario.module.js"></script>
+    <script src="app/modules/calendario/controllers/calendario.controller.js"></script>
+
+</body>
+
+</html>

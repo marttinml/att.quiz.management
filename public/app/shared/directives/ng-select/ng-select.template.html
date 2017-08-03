@@ -1,0 +1,13 @@
+<div>
+	<div class="wrapper" ng-click="open()">
+		<label ng-class="{focused:itemSelected!=''}">{{titulo}}</label>
+		<span>{{itemSelected.name}}</span>
+		<i ng-class="show ? 'up': 'down'"></i>
+	</div>
+	<ul ng-style="{height:(set.length*50)+'px'}" ng-show="show">
+		<li ng-repeat="item in set" ng-click="select(item)">
+			{{item.name}}
+		</li>
+	</ul>
+	<div class="overlay" ng-show="show" ng-click="close()"></div>
+</div>

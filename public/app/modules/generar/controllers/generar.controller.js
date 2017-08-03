@@ -1,0 +1,49 @@
+/* global angular*/
+(function () {
+
+    var Controller = function ($scope, $rootScope, $window, $internal, $encuestas) {
+
+        $rootScope.spin = true;
+
+        var encuesta = new $encuestas();
+
+        $scope.guardar = function () {
+            encuesta.titulo = $internal.encuesta.titulo;
+            encuesta.descripcion = $internal.encuesta.descripcion;
+            encuesta.autor = $internal.encuesta.autor;
+            encuesta.direccion = $internal.encuesta.direccion;
+            encuesta.valides = $internal.encuesta.valides;
+            encuesta.tiempo = $internal.encuesta.tiempo;
+            encuesta.tipoEncuesta = $internal.encuesta.tipoEncuesta;
+            encuesta.preguntas = $internal.preguntas;
+            encuesta
+                .$save()
+                .then(function (data) {
+                    $scope.codigo = data.id;
+                    $rootScope.spin = false;
+                    $internal.preguntas = [
+                        {
+                            pregunta: '',
+                            respuestas: []
+                        }
+                    ];
+                    console.log(data);
+                }, function (e) {
+                    $rootScope.spin = false;
+                    console.log(e);
+                });
+        };
+
+        $scope.terminar = function () {
+            $window.location = '#/';
+        };
+
+        $scope.guardar();
+    };
+
+    Controller.$inject = ['$scope', '$rootScope', '$window', '$internal', '$encuestas'];
+
+    angular
+        .module('generar')
+        .controller('GenerarCodigoController', Controller);
+})();

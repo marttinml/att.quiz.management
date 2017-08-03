@@ -1,0 +1,44 @@
+<main style="padding-top: 20px;" class="background-dark">
+    <div class="container-fluid" ng-hide="encuestas.length">
+        <div class="col-md-12">
+            <form>
+                <div class="form-group">
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <div ng-show="encuestas.length">
+        <div class="mis-encuestas">Mis encuestas</div>
+        <div class="globo"></div>
+        <div class="full-encuestas">
+            <form>
+                <div class="form-group">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td style="width: 60%;">Título</td>
+                                <td>Nº</td>
+                                <td>Usuarios</td>
+                                <td>Elim...</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="encuesta in encuestas">
+                                <td style="width: 60%;" ng-click="detalle($index)">
+                                    <div class="estatus active"></div> {{encuesta.titulo}}
+                                </td>
+                                <td style="width: 40px; text-align: center;">{{encuesta.id}}</td>
+                                <td style="width: 80px;">{{encuesta.respondida}}</td>
+                                <td style="width: 40px; cursor:pointer; color: red" ng-click="delete(encuesta.id)">X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div ng-click="crear()" ng-show="encuestas.length" class="btn-agregar-encuesta"></div>
+    <button type="button" class="btn button-dark-icon" ng-click="crear()" ng-hide="encuestas.length">
+        <i class="ico-add"></i> Crear encuesta</button>
+</main>

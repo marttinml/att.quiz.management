@@ -1,0 +1,14 @@
+<header class="header-preguntas">
+    <div class="close" ng-click="cerrar()"></div>
+</header>
+<div>
+    <div style="color: #1BA0D9; font-size: 24px; font-family: 'Omnes Medium'; width: 100%; text-align: center; margin: 30px auto 60px 0;">{{titulo}}</div>
+    <ul>
+        <li style="font-size: 20px; font-family: 'Omnes'; list-style: none;" ng-repeat="pregunta in preguntas">
+            <span style="width: 14px; height: 1px; background: #1BA0D9; display: inline-block; vertical-align: middle;"></span> <span>{{pregunta.pregunta}}</span>
+        </li>
+    </ul>
+    <div class="form-group footer-buttons">
+        <div ng-click="publicar()" class="big-button">PUBLICAR</div>
+    </div>
+</div>

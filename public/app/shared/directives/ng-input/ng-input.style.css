@@ -1,0 +1,93 @@
+main {
+    position: relative;
+    background: rgba(255, 255, 255, 0.31);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+main div.btn-crear {
+    color: white;
+    width: 200px;
+    height: 70px;
+    line-height: 35px;
+    margin: -35px 0 0 -100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+    border-bottom: 1px solid #3f3f3f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.container-crear {
+    padding-top: 30px;
+}
+
+.ng-input {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ng-input > input {
+    position: absolute;
+    left: 3px;
+    text-align: left;
+    width: calc(100% - 90px);
+    font-size: 14px;
+    height: 30px;
+    top: 11px;
+    outline: none;
+    background: none;
+    box-shadow: none !important;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.ng-input > span {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    padding: 0 3px;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.ng-input > span.active {
+    font-size: 12px;
+    width: auto;
+    text-align: left;
+}

@@ -1,0 +1,23 @@
+.datepicker {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid rgb(17, 160, 217);
+    text-align: center;
+}
+
+.datepicker-label {
+    font-size: 20px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    transition: .2s;
+    font-weight: normal;
+    color: rgb(155, 155, 155);
+    cursor: pointer;
+}
