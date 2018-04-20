@@ -4,8 +4,8 @@
     var Controller = function ($scope, $rootScope, $routeParams, $encuestas, $indicadores, $interval, $window) {
 
         
-        //var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
-        var socket = io.connect('http://localhost:3000/');// SOcket.io
+        var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
+        //var socket = io.connect('http://localhost:3000/');// SOcket.io
         socket.on('update-indicadores', function (data) {
             console.log(data);
             $scope.veces = data.respondida;
