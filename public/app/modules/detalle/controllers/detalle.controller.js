@@ -1,11 +1,11 @@
 /* global angular*/
 (function () {
 
-    var Controller = function ($scope, $rootScope, $routeParams, $encuestas, $indicadores, $interval, $window) {
+    var Controller = function ($scope, $rootScope, $routeParams, $encuestas, $indicadores, $interval, $window, $calificacion) {
 
         
         var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
-        //var socket = io.connect('http://localhost:3000/');// SOcket.io
+        // var socket = io.connect('http://localhost:3000/');// SOcket.io
         socket.on('update-indicadores', function (data) {
             console.log(data);
             $scope.veces = data.respondida;
@@ -117,28 +117,24 @@
         $scope.detalleEncuesta = function(){
             $window.location = '#/detalle-encuesta/' + $routeParams.id_encuesta;
         };
-        
-        
-        
 
-        // $interval(function () {
-        //     $indicadores.get({
-        //         id_encuesta: $routeParams.id_encuesta
-        //     }, function (data) {
-        //         $rootScope.spin = false;
-        //         $scope.veces = data.respondida;
-        //         $scope.graficas = getColors(data.graficas);
-        //         console.log(data);
-        //     }, function (e) {
-        //         $rootScope.spin = false;
-        //         console.log(e);
-        //     });
-        // }, 10000);
+        $scope.getResults = function(){
+            $rootScope.spin = false;
+            $scope.encuesta = $calificacion.get({
+                id_encuesta: $routeParams.id_encuesta
+            }, function (data) {
+                $rootScope.spin = false;
+                console.log(data);
+            }, function (e) {
+                $rootScope.spin = false;
+                console.log(e);
+            });
+        };
 
 
     };
 
-    Controller.$inject = ['$scope', '$rootScope', '$routeParams', '$encuestas', '$indicadores', '$interval', '$window'];
+    Controller.$inject = ['$scope', '$rootScope', '$routeParams', '$encuestas', '$indicadores', '$interval', '$window', '$calificacion'];
 
     angular
         .module('detalle')

@@ -73,6 +73,7 @@
         $scope.vigencia = '';
         $scope.duracionPregunta = '';
         $scope.tipoEncuesta = '';
+        $scope.timeTemp = '';
 
         function isValid() {
             if ($scope.titulo === '') {
@@ -96,7 +97,11 @@
                                     if ($scope.tipoEncuesta === '') {
                                         return false;
                                     } else {
-                                        return true;
+                                        if ($scope.timeTemp === '') {
+                                            return false;
+                                        } else {
+                                            return true;
+                                        }
                                     }
                                 }
                             }
@@ -123,6 +128,10 @@
                 $internal.encuesta.valides = $scope.vigencia;
                 $internal.encuesta.tiempo = $scope.duracionPregunta.time;
                 $internal.encuesta.tipoEncuesta = $scope.tipoEncuesta;
+
+                $scope.vigencia.setHours($scope.timeTemp.getHours());
+                $scope.vigencia.setMinutes($scope.timeTemp.getMinutes());
+                
                 if ($internal.encuesta.tipoEncuesta.id == 1) {
                     $window.location = '#/preguntas';
                 } else {

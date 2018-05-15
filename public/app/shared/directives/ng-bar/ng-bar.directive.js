@@ -28,7 +28,7 @@
 
             // Create the fill
             $scope.fill = $scope.paper
-                .rect(0, 0, $scope.size.width * (($scope.percent < 10 ? 10 : $scope.percent) / 100), $scope.size.height, 25, 25)
+                .rect(0, 0, $scope.size.width * (($scope.percent > 50 ? $scope.percent : ($scope.percent + 10)) / 100), $scope.size.height, 25, 25)
                 .attr({
                     fill: $scope.color
                 });
@@ -37,8 +37,8 @@
             $scope.$watch('percent', function (nueva, antigua) {
                 // Fix the percent
                 var percent = $scope.percent;
-                if ($scope.percent < 10) {
-                    percent = 10;
+                if ($scope.percent < 50) {
+                    percent = $scope.percent + 10;
                 }
                 // Animate the percent width = totalWidth * (percent / 100)
                 $timeout(function () {

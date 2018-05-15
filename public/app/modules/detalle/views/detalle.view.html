@@ -15,49 +15,18 @@
         </div>
     </div>
 
-
-    <!-- <div class="container-fluid">
-        <div class="col-md-12">
-                <table class="table">
-                <tbody>
-                    <tr ng-click="detalleEncuesta()">
-                        <td style="width: 100%;">
-                            
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div> -->
-
     <div class="form-group footer-buttons" style="height: 60px; background-color:transparent">
         <p>
             <button type="button" class="btn button-blue" ng-click="detalleEncuesta()" style="width: 90%; margin: 0 auto; max-width:400px;display: block; background-color:rgb(255,255,255);">DETALLE</button>
         </p>
     </div>
 
-
-
-    <!-- <div class="container-fluid">
-        <div class="col-md-12">
-            <hr>
-        </div>
-        <div class="col-md-12">
-            <div class="respuestas">Resultado por pregunta</div>
-        </div>
-        <div class="col-md-12" ng-repeat="pregunta in preguntas" style="padding-bottom:50px;">
-            <div>{{pregunta.pregunta}}</div>
-            <div class="grafica" ng-repeat="respuesta in pregunta.respuestas">
-                <div>{{respuesta.categoria || respuesta.name}}</div>
-                <div ng-bar percent="respuesta.porcentaje" color="respuesta.color"></div>
-            </div>
-        </div>
-    </div> -->
 </main>
 <div class="sidebar-detalle" ng-show="muestraId" ng-click="toggleId()">
     <div class="close"></div>
     <div class="info-encuesta" ng-class="{'open': muestraId}">
         <div class="numero-encuesta">Número de encuesta</div>
         <div class="id-encuesta">#{{encuesta.id}}</div>
+        <div class="id-encuesta" ng-show="encuesta.tipoEncuesta.id===3" ng-click="getResults()"> Resultados de Examen</div>
     </div>
-</div>
+</div> 
