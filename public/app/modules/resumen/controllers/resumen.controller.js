@@ -7,6 +7,7 @@
         $scope.autor = $internal.encuesta.autor;
         $scope.direccion = $internal.encuesta.direccion;
         $scope.valides = $internal.encuesta.valides;
+        $scope.vigenciaInicio = $internal.encuesta.vigenciaInicio;        
         $scope.tiempo = $internal.encuesta.tiempo;
         $scope.tipoEncuesta = $internal.encuesta.tipoEncuesta;
         $scope.preguntas = $internal.preguntas;

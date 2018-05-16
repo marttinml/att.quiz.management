@@ -33,14 +33,28 @@
                         </div>
                         <div class="form-group">
                             <div class="datepicker">
+                                <div class="datepicker-label" ng-click="openVigenciaInicio()" ng-hide="vigenciaVaciaInicio">
+                                <span class="month-vigencia"><span>Mes</span> {{monthInicio}}</span> <span class="day-vigencia"><span>Día</span> {{dayInicio}}</span></div>
+                                <div class="datepicker-label" ng-click="openVigenciaInicio()" ng-show="vigenciaVaciaInicio">Fecha de Vigencia Inicio<i class="flecha-down"></i></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div ng-placeholder class="textbox" ng-model="inicioVigenciaTemp">
+                                <label>Hora de Vigencia Inicio</label>
+                                <input type="time" ng-model="inicioVigenciaTemp">
+                                <i></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="datepicker">
                                 <div class="datepicker-label" ng-click="openVigencia()" ng-hide="vigenciaVacia">
                                 <span class="month-vigencia"><span>Mes</span> {{month}}</span> <span class="day-vigencia"><span>Día</span> {{day}}</span></div>
-                                <div class="datepicker-label" ng-click="openVigencia()" ng-show="vigenciaVacia">Fecha de Vigencia <i class="flecha-down"></i></div>
+                                <div class="datepicker-label" ng-click="openVigencia()" ng-show="vigenciaVacia">Fecha de Vigencia Fin<i class="flecha-down"></i></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div ng-placeholder class="textbox" ng-model="timeTemp">
-                                <label>Hora de Vigencia</label>
+                                <label>Hora de Vigencia Fin</label>
                                 <input type="time" ng-model="timeTemp">
                                 <i></i>
                             </div>
@@ -69,5 +83,14 @@
     <div date-picker view="date" max-view="date" min-view="date" min-date="minDate" date-change="changeDate"></div>
     <div class="form-group footer-buttons">
         <div ng-click="aceptarCalendario()" class="big-button">ACEPTAR</div>
+    </div>
+</div>
+<div class="alerta-calendario" ng-show="showCalendarioInicio">
+    <header class="header-preguntas">
+        <div class="back" ng-click="cerrarCalendarioInicio()"></div>
+    </header>
+    <div date-picker view="date" max-view="date" min-view="date" min-date="minDate" date-change="changeDateInicio"></div>
+    <div class="form-group footer-buttons">
+        <div ng-click="aceptarCalendarioInicio()" class="big-button">ACEPTAR</div>
     </div>
 </div>

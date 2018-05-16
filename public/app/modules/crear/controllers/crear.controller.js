@@ -15,13 +15,13 @@
             $window.location = '#/';
         };
 
-        $internal.categorias = [
-            {
-                id: 1,
-                name: '',
-                img: ''
-            }
-        ];
+        // $internal.categorias = [
+        //     {
+        //         id: 0,
+        //         name: '',
+        //         img: ''
+        //     }
+        // ];
         $internal.encuesta = {};
         $internal.preguntas = [
             {
@@ -70,6 +70,7 @@
         $scope.descripcion = '';
         $scope.autor = '';
         $scope.direccion = '';
+        $scope.vigenciaInicio = '';
         $scope.vigencia = '';
         $scope.duracionPregunta = '';
         $scope.tipoEncuesta = '';
@@ -100,7 +101,15 @@
                                         if ($scope.timeTemp === '') {
                                             return false;
                                         } else {
-                                            return true;
+                                            if ($scope.vigenciaInicio === '') {
+                                                return false;
+                                            } else {
+                                                if ($scope.inicioVigenciaTemp === '') {
+                                                    return false;
+                                                } else {
+                                                    return true;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -118,6 +127,9 @@
         $scope.openVigencia = function () {
             $scope.showCalendario = true;
         };
+        $scope.openVigenciaInicio = function () {
+            $scope.showCalendarioInicio = true;
+        };
 
         $scope.siguiente = function () {
             if (isValid()) {
@@ -126,11 +138,16 @@
                 $internal.encuesta.autor = $scope.autor;
                 $internal.encuesta.direccion = $scope.direccion;
                 $internal.encuesta.valides = $scope.vigencia;
+                $internal.encuesta.vigenciaInicio = $scope.vigenciaInicio;                
                 $internal.encuesta.tiempo = $scope.duracionPregunta.time;
                 $internal.encuesta.tipoEncuesta = $scope.tipoEncuesta;
 
                 $scope.vigencia.setHours($scope.timeTemp.getHours());
                 $scope.vigencia.setMinutes($scope.timeTemp.getMinutes());
+
+                $scope.vigenciaInicio.setHours($scope.inicioVigenciaTemp.getHours());
+                $scope.vigenciaInicio.setMinutes($scope.inicioVigenciaTemp.getMinutes());
+                
                 
                 if ($internal.encuesta.tipoEncuesta.id == 1) {
                     $window.location = '#/preguntas';
@@ -144,13 +161,15 @@
         };
 
         $scope.showCalendario = false;
+        $scope.showCalendarioInicio = false;
+        
         
         $scope.vigenciaVacia = true;
+        $scope.vigenciaVaciaInicio = true;
 
         $scope.minDate = moment();
 
         $scope.changeDate = function (e, data) {
-            console.log(data._d);
             $scope.vigencia = data._d;
             var fecha = moment($scope.vigencia);
             $scope.month = fecha.format('M');
@@ -158,12 +177,26 @@
             $scope.vigenciaVacia = false;
         };
 
+        $scope.changeDateInicio = function (e, data) {
+            $scope.vigenciaInicio = data._d;
+            var fecha = moment($scope.vigenciaInicio);
+            $scope.monthInicio = fecha.format('M');
+            $scope.dayInicio = fecha.format('D');
+            $scope.vigenciaVaciaInicio = false;
+        };
+
         $scope.aceptarCalendario = function () {
             $scope.showCalendario = false;
+        };
+        $scope.aceptarCalendarioInicio = function () {
+            $scope.showCalendarioInicio = false;
         };
         
         $scope.cerrarCalendario = function () {
             $scope.showCalendario = false;
+        };
+        $scope.cerrarCalendarioInicio = function () {
+            $scope.showCalendarioInicio = false;
         };
     };
 

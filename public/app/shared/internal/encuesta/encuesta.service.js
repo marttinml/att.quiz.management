@@ -5,7 +5,7 @@
         return {
             categorias: [
                 {
-                    id: 1,
+                    id: 0,
                     categoria: '',
                     respuesta: ''
                 }

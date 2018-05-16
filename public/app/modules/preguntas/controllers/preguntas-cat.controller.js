@@ -62,12 +62,14 @@
         function resetCategorias() {
             var array = [];
             for (var i = 0; i < $internal.categorias.length; i++) {
+                console.log(i);
                 array.push({
                     id: i,
                     categoria: $internal.categorias[i].categoria,
                     respuesta: ''
                 });
             }
+            console.log(array);
             return array;
         }
 

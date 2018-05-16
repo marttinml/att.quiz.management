@@ -10,7 +10,7 @@
             $window.location = '#/crear';
             $internal.categorias = [
                 {
-                    id: 1,
+                    id: 0,
                     categoria: '',
                     respuesta: ''
                 }
@@ -46,7 +46,7 @@
             if ($scope.categorias.length < 10) {
                 if (isValid()) {
                     $scope.categorias.push({
-                        id: $internal.categorias.length + 1,
+                        id: $scope.categorias.length,
                         categoria: '',
                         respuesta: ''
                     });

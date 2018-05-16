@@ -8,14 +8,17 @@
         var encuesta = new $encuestas();
 
         $scope.guardar = function () {
-            encuesta.titulo = $internal.encuesta.titulo;
-            encuesta.descripcion = $internal.encuesta.descripcion;
-            encuesta.autor = $internal.encuesta.autor;
-            encuesta.direccion = $internal.encuesta.direccion;
-            encuesta.valides = $internal.encuesta.valides;
-            encuesta.tiempo = $internal.encuesta.tiempo;
-            encuesta.tipoEncuesta = $internal.encuesta.tipoEncuesta;
-            encuesta.preguntas = $internal.preguntas;
+            encuesta.titulo         = $internal.encuesta.titulo;
+            encuesta.descripcion    = $internal.encuesta.descripcion;
+            encuesta.autor          = $internal.encuesta.autor;
+            encuesta.direccion      = $internal.encuesta.direccion;
+            encuesta.valides        = $internal.encuesta.valides;
+            encuesta.vigenciaInicio = $internal.encuesta.vigenciaInicio;            
+            encuesta.tiempo         = $internal.encuesta.tiempo;
+            encuesta.tipoEncuesta   = $internal.encuesta.tipoEncuesta;
+            encuesta.preguntas      = $internal.preguntas;
+
+            console.log(encuesta);
             encuesta
                 .$save()
                 .then(function (data) {
@@ -33,6 +36,7 @@
                     console.log(e);
                 });
         };
+        
 
         $scope.terminar = function () {
             $window.location = '#/';

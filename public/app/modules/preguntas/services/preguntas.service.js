@@ -14,6 +14,7 @@
                 return this.preguntas;
             },
             addPregunta: function(obj){
+                console.log(obj);
                 if (this.preguntaActual == (this.getAll().length - 1)){
                     this.preguntas.push(obj);
                 } else {
