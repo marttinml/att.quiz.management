@@ -18,7 +18,12 @@
             encuesta.tipoEncuesta   = $internal.encuesta.tipoEncuesta;
             encuesta.preguntas      = $internal.preguntas;
 
+
             console.log(encuesta);
+            
+            encuesta.valides.setHours(encuesta.valides.getHours() - encuesta.valides.getTimezoneOffset() / 60);
+            encuesta.vigenciaInicio.setHours(encuesta.vigenciaInicio.getHours() - encuesta.vigenciaInicio.getTimezoneOffset() / 60);
+            
             encuesta
                 .$save()
                 .then(function (data) {
