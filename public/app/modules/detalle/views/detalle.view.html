@@ -27,6 +27,6 @@
     <div class="info-encuesta" ng-class="{'open': muestraId}">
         <div class="numero-encuesta">Número de encuesta</div>
         <div class="id-encuesta">#{{encuesta.id}}</div>
-        <div class="id-encuesta" ng-show="encuesta.tipoEncuesta.id===3" ng-click="getResults()"> Resultados de Examen</div>
+        <div class="id-encuesta" ng-show="encuesta.tipoEncuesta.id===3" ng-click="getExcel()"> Descargar calificaciones</div>
     </div>
 </div> 

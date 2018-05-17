@@ -1,7 +1,7 @@
 /* global angular*/
 (function () {
 
-    var Controller = function ($scope, $rootScope, $routeParams, $encuestas, $indicadores, $interval, $window, $calificacion) {
+    var Controller = function ($scope, $rootScope, $routeParams, $encuestas, $indicadores, $interval, $window, $calificacion, $excel) {
 
         
         var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
@@ -131,10 +131,17 @@
             });
         };
 
+        $scope.getExcel = function(){
+            $excel.get({id_encuesta:$routeParams.id_encuesta},function (e) {
+                $rootScope.spin = false;
+                console.log(e);
+            });
+        };
+
 
     };
 
-    Controller.$inject = ['$scope', '$rootScope', '$routeParams', '$encuestas', '$indicadores', '$interval', '$window', '$calificacion'];
+    Controller.$inject = ['$scope', '$rootScope', '$routeParams', '$encuestas', '$indicadores', '$interval', '$window', '$calificacion', '$excel'];
 
     angular
         .module('detalle')
