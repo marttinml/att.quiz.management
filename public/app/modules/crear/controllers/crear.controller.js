@@ -42,7 +42,12 @@
             {
                 time: 180,
                 name: '60 a 90 segundos'
+            },
+            {
+                time: 200,
+                name: '30 minutos'
             }
+
         ];
 
         // Cierra todo y resetea
