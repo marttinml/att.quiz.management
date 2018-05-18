@@ -14,6 +14,8 @@
             $scope.$apply();
           });
 
+          $scope.id_encuesta = $routeParams.id_encuesta;
+
 
           var settingColor = function(list){
               var color = '';

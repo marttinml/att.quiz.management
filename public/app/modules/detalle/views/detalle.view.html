@@ -27,6 +27,8 @@
     <div class="info-encuesta" ng-class="{'open': muestraId}">
         <div class="numero-encuesta">Número de encuesta</div>
         <div class="id-encuesta">#{{encuesta.id}}</div>
-        <div class="id-encuesta" ng-show="encuesta.tipoEncuesta.id===3" ng-click="getExcel()"> Descargar calificaciones</div>
+        <a ng-show="encuesta.tipoEncuesta.id===3" href="https://rocky-basin-62683.herokuapp.com/v0/calificaciones_excel/{{id_encuesta}}">
+            <div class="id-encuesta"> Descargar calificaciones</div>
+        </a>
     </div>
 </div> 
