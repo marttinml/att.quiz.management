@@ -44,7 +44,7 @@
                 name: '60 a 90 segundos'
             },
             {
-                time: 200,
+                time: 1800,
                 name: '30 minutos'
             }
 
