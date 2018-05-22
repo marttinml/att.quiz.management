@@ -18,3 +18,8 @@ ng-header > header > .back {
     background-position: center center;
     background-size: 40%;
 }
+ng-header > header > span{
+    display: block;
+    line-height: 18px;
+    padding: 18px 30px;
+}
