@@ -35,6 +35,22 @@
                             respuestas: []
                         }
                     ];
+                    $internal.categorias = [
+                        {
+                            id: 0,
+                            categoria: '',
+                            respuesta: ''
+                        }
+                    ];
+                    $internal.encuesta = {
+                        titulo: '',
+                        descripcion: '',
+                        autor: '',
+                        direccion: '',
+                        valides: '',
+                        tiempo: '',
+                        tipoEncuesta: ''
+                    };
                     console.log(data);
                 }, function (e) {
                     $rootScope.spin = false;
