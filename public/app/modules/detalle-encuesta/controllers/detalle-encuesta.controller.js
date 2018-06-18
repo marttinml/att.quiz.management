@@ -4,7 +4,7 @@
     var Controller = function ($scope, $rootScope, $routeParams, $encuestas, $indicadores, $interval) {
 
         
-        var socket = io.connect('https://serene-ridge-79304.herokuapp.com/');// Socket.io
+        var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
         //var socket = io.connect('http://localhost:3000/');// SOcket.io
         socket.on('update-indicadores', function (data) {
             console.log(data);
