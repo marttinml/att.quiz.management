@@ -5,12 +5,12 @@
 
         $rootScope.spin = true;
 
-        var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
-        //var socket = io.connect('http://localhost:3000/');// SOcket.io
-        socket.on('update-encuestas', function (data) {
-            $scope.encuestas = data;
-            $scope.$apply();
-          });
+        // var socket = io.connect('https://ancient-journey-62555.herokuapp.com/');// Socket.io
+        // //var socket = io.connect('http://localhost:3000/');// SOcket.io
+        // socket.on('update-encuestas', function (data) {
+        //     $scope.encuestas = data;
+        //     $scope.$apply();
+        //   });
 
         // MARK: - Crear nueva encuesta
         $scope.crear = function () {
