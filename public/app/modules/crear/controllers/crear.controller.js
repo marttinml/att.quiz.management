@@ -154,7 +154,7 @@
                 $scope.vigenciaInicio.setMinutes($scope.inicioVigenciaTemp.getMinutes());
                 
                 
-                if ($internal.encuesta.tipoEncuesta.id == 1) {
+                if ($internal.encuesta.tipoEncuesta.id === 1 || $internal.encuesta.tipoEncuesta.id === 4) {
                     $window.location = '#/preguntas';
                 } else {
                     $window.location = '#/categorias';
