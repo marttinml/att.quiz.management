@@ -20,19 +20,20 @@
             for(var i in list){
                 var pregunta = list[i]; 
              for (var j in pregunta.respuestas) {
-                    if (j == "0") {
-                        color = '#3BAED9';
-                    }else if (j == "1") {
-                        color = '#38BC9C';
-                    } else if (j == "2") {
-                        color = '#8CC051';
-                    } else if (j == "3") {
-                        color = '#F6BB43';
-                    } else if (j == "4") {
-                        color = '#DB4453';
-                    } else {
-                        color = '#13ac8f';
-                    }
+                    color = '#009EDA';
+                    // if (j == "0") {
+                    //     color = '#3BAED9';
+                    // }else if (j == "1") {
+                    //     color = '#38BC9C';
+                    // } else if (j == "2") {
+                    //     color = '#8CC051';
+                    // } else if (j == "3") {
+                    //     color = '#F6BB43';
+                    // } else if (j == "4") {
+                    //     color = '#DB4453';
+                    // } else {
+                    //     color = '#13ac8f';
+                    // }
                 pregunta.respuestas[j].color = color;
                 }   
             }
@@ -46,29 +47,28 @@
         $scope.toggleId = function () {
             $scope.muestraId = !$scope.muestraId;
         };
-
         $scope.graficas = [
             {
-                color: '#3BAED9',
+                color: '#009EDA',
                 porcentaje: 43
             },
             {
-                color: '#38BC9C',
+                color: '#009EDA',
                 porcentaje: 27,
                 before: 0
             },
             {
-                color: '#8CC051',
+                color: '#009EDA',
                 porcentaje: 16,
                 before: 0
             },
             {
-                color: '#F6BB43',
+                color: '#009EDA',
                 porcentaje: 10,
                 before: 0
             },
             {
-                color: '#DB4453',
+                color: '#009EDA',
                 porcentaje: 4,
                 before: 0
             }
@@ -79,19 +79,20 @@
             var color = '';
 
             for (var i = 0; i < graficas.length; i++) {
-                if (i == 0) {
-                    color = '#3BAED9';
-                }else if (i == 1) {
-                    color = '#38BC9C';
-                } else if (i == 2) {
-                    color = '#8CC051';
-                } else if (i == 3) {
-                    color = '#F6BB43';
-                } else if (i == 4) {
-                    color = '#DB4453';
-                } else {
-                    color = '#13ac8f';
-                }
+                color = '#009EDA';
+                // if (i == 0) {
+                //     color = '#3BAED9';
+                // }else if (i == 1) {
+                //     color = '#38BC9C';
+                // } else if (i == 2) {
+                //     color = '#8CC051';
+                // } else if (i == 3) {
+                //     color = '#F6BB43';
+                // } else if (i == 4) {
+                //     color = '#DB4453';
+                // } else {
+                //     color = '#13ac8f';
+                // }
                 array.push({
                     color: color,
                     name: graficas[i].name,
